@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: sfnvm-personal-blog-svc
+  datasource:
+    url: jdbc:postgresql://localhost:15432/personalblog?currentSchema=personalblog&binaryTransfer=true&reWriteBatchedInserts=true&stringtype=unspecified
+    username: postgres
+    password: postgres
+    hikari:
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+      minimum-idle: 10
+      maximum-pool-size: 20
