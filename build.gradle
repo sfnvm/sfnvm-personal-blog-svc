@@ -7,6 +7,14 @@ plugins {
 group = 'com.sfnvm'
 version = '0.0.1-SNAPSHOT'
 
+/////////////////////
+//// VERSIONING /////
+/////////////////////
+def mapstructVersion = '1.5.3.Final'
+def commonMarkVersion = '0.22.0'
+def apacheCommonsLangVersion = '3.14.0'
+def apacheCommonsCollectionVersion = '4.4'
+
 java {
     sourceCompatibility = '21'
 }
@@ -26,6 +34,12 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-rest'
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+    implementation "org.mapstruct:mapstruct:${mapstructVersion}"
+    implementation "org.commonmark:commonmark:${commonMarkVersion}"
+    implementation "org.apache.commons:commons-lang3:${apacheCommonsLangVersion}"
+    implementation "org.apache.commons:commons-collections4:${apacheCommonsCollectionVersion}"
 
     implementation 'org.liquibase:liquibase-core'
 
@@ -37,6 +51,7 @@ dependencies {
 
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
     annotationProcessor 'org.projectlombok:lombok'
+    annotationProcessor "org.mapstruct:mapstruct-processor:1.5.3.Final"
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
